@@ -7,7 +7,7 @@ deploy:
   provider: releases
   api_key:
     secure: IcdXLMcPtoVZ6ms4v6Lvaz05zezseFpka+AZaNmcAar67sMbjEIA3ejedEYBoaYUfWWru2uZJ2YEh19fb2gkykXBfGmc3vhsahqjH2xOezjLRmb6rZEjamNlZX0MmP7QoWKWYfiUl2OO3S/ymK9Q609vtVDtGpgTP1ox9IXqxoI=
-  file: build/libs/xld-ssrs-plugin-2.0.0.jar
+  file: build/libs/xld-ssrs-plugin-2.0.1.jar
   skip_cleanup: true
   on:
     all_branches: true
