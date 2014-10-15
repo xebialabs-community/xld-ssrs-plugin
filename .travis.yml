@@ -1,1 +1,14 @@
 language: java
+notifications:
+  hipchat:
+    rooms:
+      secure: lduu/26Xw+H6/Dj9qt3TMa71eSQRe6xVX05XYge4JawJERYNo1v9U+UMC4w2wbqN4vslbCd5fvD8n4+HlDi2fP2nOVJIs5xUuF5WlgnBXRkT83B6TvJAOgPo8kwPVt8mSgNJL3GPuaYkrl3qJlamlEIaaOkmGYvImC5Ee15RkdY=
+deploy:
+  provider: releases
+  api_key:
+    secure: IcdXLMcPtoVZ6ms4v6Lvaz05zezseFpka+AZaNmcAar67sMbjEIA3ejedEYBoaYUfWWru2uZJ2YEh19fb2gkykXBfGmc3vhsahqjH2xOezjLRmb6rZEjamNlZX0MmP7QoWKWYfiUl2OO3S/ymK9Q609vtVDtGpgTP1ox9IXqxoI=
+  file: build/libs/xld-ssrs-plugin-2.0.0.jar
+  skip_cleanup: true
+  on:
+    all_branches: true
+    tags: true
