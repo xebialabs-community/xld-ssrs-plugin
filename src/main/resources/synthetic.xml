@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+    THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS
+    FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
+
+-->
+<synthetic xmlns="http://www.xebialabs.com/deployit/synthetic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd">
+  <type type="mssql.DeployedRSReports" deployable-type="mssql.RSReports" container-type="sql.MsSqlClient" extends="powershell.ExtensiblePowerShellDeployedArtifact"
+    description="Published SSRS Reports">
+    <generate-deployable type="mssql.RSReports" extends="powershell.BasePowerShellDeployableFolderArtifact"
+      description="Folder containing SSRS reports (.rdl files)"/>
+
+    <!-- hidden -->
+    <property name="createScript" default="ssrs/deploy-rsreports.ps1" hidden="true"/>
+    <property name="createOrder" kind="integer" default="54" hidden="true"/>
+    <property name="createVerb" default="Copy" hidden="true"/>
+    <property name="modifyScript" default="ssrs/deploy-rsreports.ps1" hidden="true"/>
+    <property name="modifyOrder" kind="integer" default="54" hidden="true"/>
+    <property name="modifyVerb" default="Copy" hidden="true"/>
+    <property name="destroyScript" default="ssrs/destroy-rsreports.ps1" hidden="true"/>
+    <property name="destroyOrder" kind="integer" default="46" hidden="true"/>
+    <property name="destroyVerb" default="Delete" hidden="true"/>
+
+    <!-- public -->
+    <property name="reportServername" required="true"/>
+    <property name="serverPath" required="true"/>
+    <property name="dataSourceName" required="true"/>
+    <property name="dataSourcePath" required="true"/>
+    <property name="dataSourceParent" required="true"/>
+    <property name="dataSourceServerInstance" required="true"/>
+    <property name="dataBaseName" required="true"/>
+  </type>
+
+</synthetic>
