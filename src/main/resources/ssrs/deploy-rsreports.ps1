@@ -57,7 +57,7 @@ function UploadReports($reportServerName = $(throw "reportServerName is required
       $uploadedCount += 1
     }
 
-  @Set Datasource for alle reports in serverPath location
+  #Set Datasource for alle reports in serverPath location
     $reports = $proxy.ListChildren($serverPath, $false)
     $reports | ForEach-Object {
       if($reports -contains $_.name)
