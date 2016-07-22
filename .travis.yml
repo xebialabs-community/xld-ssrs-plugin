@@ -6,9 +6,10 @@ notifications:
 deploy:
   provider: releases
   api_key:
-    secure: IcdXLMcPtoVZ6ms4v6Lvaz05zezseFpka+AZaNmcAar67sMbjEIA3ejedEYBoaYUfWWru2uZJ2YEh19fb2gkykXBfGmc3vhsahqjH2xOezjLRmb6rZEjamNlZX0MmP7QoWKWYfiUl2OO3S/ymK9Q609vtVDtGpgTP1ox9IXqxoI=
-  file: build/libs/xld-ssrs-plugin-2.0.1.jar
+    secure: hek90dw6rMT/o161AGadWPZZXjufDqVMetzHgw19DGfsZKIDuAJpwf/RH7XeOlJ6928R7I4v8M+u59ktERwbAukLBUh/aoEPC1Imz8ArQHgrhf+OIKUFG3xOA0Cg5T6kpHp9C3ANuYeX022J+Wnr3TBqN/NtmoS4/pf+3wbMND4=
+  file: build/distributions/xld-ssrs-plugin-2.0.1.xldp
   skip_cleanup: true
   on:
     all_branches: true
     tags: true
+    repo: xebialabs-community/xld-ssrs-plugin
