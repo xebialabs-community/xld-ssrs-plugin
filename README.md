@@ -6,16 +6,16 @@ See the **XL Deploy Reference Manual** for background information on XL Deploy a
 
 # CI status #
 
-[![Build Status][xld-ssrs-travis-image] ][xld-ssrs-travis-url]
-[![Codacy Badge][xld-ssrs-codacy-image] ][xld-ssrs-codacy-url]
-[![Code Climate][xld-ssrs-code-climate-image] ][xld-ssrs-code-climate-url]
+[![Build Status][xld-ssrs-plugin-travis-image] ][xld-ssrs-plugin-travis-url]
+[![Codacy Badge][xld-ssrs-plugin-codacy-image] ][xld-ssrs-plugin-codacy-url]
+[![Code Climate][xld-ssrs-plugin-code-climate-image] ][xld-ssrs-plugin-code-climate-url]
 
-[xld-ssrs-travis-image]: https://travis-ci.org/xebialabs-community/xld-ssrs-plugin.svg?branch=master
-[xld-ssrs-travis-url]: https://travis-ci.org/xebialabs-community/xld-ssrs-plugin
-[xld-ssrs-codacy-image]: https://api.codacy.com/project/badge/Grade/c22530fe75554e8283856e4a5eeed0c5
-[xld-ssrs-codacy-url]: https://www.codacy.com/app/joris-dewinne/xld-ssrs-plugin
-[xld-ssrs-code-climate-image]: https://codeclimate.com/github/xebialabs-community/xld-ssrs-plugin/badges/gpa.svg
-[xld-ssrs-code-climate-url]: https://codeclimate.com/github/xebialabs-community/xld-ssrs-plugin
+[xld-ssrs-plugin-travis-image]: https://travis-ci.org/xebialabs-community/xld-ssrs-plugin.svg?branch=master
+[xld-ssrs-plugin-travis-url]: https://travis-ci.org/xebialabs-community/xld-ssrs-plugin
+[xld-ssrs-plugin-codacy-image]: https://api.codacy.com/project/badge/Grade/c22530fe75554e8283856e4a5eeed0c5
+[xld-ssrs-plugin-codacy-url]: https://www.codacy.com/app/joris-dewinne/xld-ssrs-plugin
+[xld-ssrs-plugin-code-climate-image]: https://codeclimate.com/github/xebialabs-community/xld-ssrs-plugin/badges/gpa.svg
+[xld-ssrs-plugin-code-climate-url]: https://codeclimate.com/github/xebialabs-community/xld-ssrs-plugin
 
 
 # Overview #

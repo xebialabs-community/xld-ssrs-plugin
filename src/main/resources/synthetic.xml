@@ -33,4 +33,40 @@
     <property name="dataBaseName" required="true"/>
   </type>
 
+  <type type="mssql.DeployedRSSync" deployable-type="mssql.RSSync" container-type="sql.MsSqlClient" extends="powershell.ExtensiblePowerShellDeployedArtifact"
+        description="Published SSRS Reports through RS.exe with .rss profile">
+    <generate-deployable type="mssql.RSSync" extends="powershell.BasePowerShellDeployableFolderArtifact"
+                         description="Folder containing SSRS reports (.rdl files)"/>
+
+    <!-- hidden -->
+    <property name="createScript" default="ssrs/deploy-rssync.ps1" hidden="true"/>
+    <property name="createOrder" kind="integer" default="50" hidden="true"/>
+    <property name="createVerb" default="Deploy" hidden="true"/>
+    <property name="modifyScript" default="ssrs/deploy-rssync.ps1" hidden="true"/>
+    <property name="modifyOrder" kind="integer" default="50" hidden="true"/>
+    <property name="modifyVerb" default="Deploy" hidden="true"/>
+    <property name="destroyScript" default="ssrs/destroy-rssync.ps1" hidden="true"/>
+    <property name="destroyOrder" kind="integer" default="40" hidden="true"/>
+    <property name="destroyVerb" default="Remove" hidden="true"/>
+
+    <!-- public -->
+    <property name="serverURL" label="Server URL" required="true" description="pecifies the Web server name and report server virtual directory name to execute the file against. An example of a report server URL is http://examplewebserver/reportserver. The prefix http:// or https:// at the beginning of the server name is optional. If you omit the prefix, the report server script host tries to use https first, and then uses http if https does not work."/>
+    <property name="rssFileName" description="Specifies the .rss file to execute. This value needs to be a relative path from the artifact root to the .rss file." required="true"/>
+    <property name="username" required="false"/>
+    <property name="password" required="false"/>
+    <property name="endpoint" required="false" description="Specifies the SOAP endpoint against which the script should run. Valid values are the following: (Mgmt2010 | Mgmt2006 | Mgmt2005 | Exec2005 ). If a value is not specified, the Mgmt2005 endpoint is used."/>
+    <property name="timeOut" description="Specifies the number of seconds that elapse before the connection to the server times out. The default is 60 seconds. If you do not specify a time-out value, the default is used. A value of 0 specifies that the connection never times out." required="false"/>
+    <property name="batchMode" kind="boolean" required="false"/>
+    <property name="rsExecutablePath" label="Path to rs.exe" default="rs" required="true"/>
+    <property as-containment="true" description="Variables for these reports" kind="set_of_ci" name="variables" referenced-type="mssql.DeployedRSVariable"/>
+  </type>
+  <type-modification type="mssql.RSSync">
+    <property as-containment="true" description="Variables for these reports" kind="set_of_ci" name="variables" referenced-type="mssql.RSVariable"/>
+  </type-modification>
+  <type container-type="mssql.DeployedRSSync" deployable-type="mssql.RSVariable" description="SSRS Report variable" extends="udm.BaseEmbeddedDeployed" type="mssql.DeployedRSVariable">
+    <generate-deployable description="SSRS Report variable" extends="udm.BaseEmbeddedDeployable" type="mssql.RSVariable"/>
+    <property name="variableName" required="true"/>
+    <property name="variableValue" required="true"/>
+  </type>
+
 </synthetic>

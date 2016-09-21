@@ -7,7 +7,7 @@ deploy:
   provider: releases
   api_key:
     secure: hek90dw6rMT/o161AGadWPZZXjufDqVMetzHgw19DGfsZKIDuAJpwf/RH7XeOlJ6928R7I4v8M+u59ktERwbAukLBUh/aoEPC1Imz8ArQHgrhf+OIKUFG3xOA0Cg5T6kpHp9C3ANuYeX022J+Wnr3TBqN/NtmoS4/pf+3wbMND4=
-  file: build/distributions/xld-ssrs-plugin-2.0.1.xldp
+  file: build/distributions/xld-ssrs-plugin-2.1.0.xldp
   skip_cleanup: true
   on:
     all_branches: true
