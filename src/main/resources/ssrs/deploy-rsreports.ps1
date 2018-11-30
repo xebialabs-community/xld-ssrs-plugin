@@ -30,7 +30,7 @@ function UploadReports($reportServerName = $(throw "reportServerName is required
 
     Write-Host "Inspecting $fromDirectory"
 
-# coerce the return to be an array with the @ operator in case only one file
+    # coerce the return to be an array with the @ operator in case only one file
     $files = @(get-childitem $fromDirectory *.rdl|where-object {!($_.psiscontainer)})
 
     $uploadedCount = 0
@@ -57,7 +57,7 @@ function UploadReports($reportServerName = $(throw "reportServerName is required
       $uploadedCount += 1
     }
 
-  #Set Datasource for alle reports in serverPath location
+    #Set Datasource for alle reports in serverPath location
     $reports = $proxy.ListChildren($serverPath, $false)
     $reports | ForEach-Object {
       if($reports -contains $_.name)
@@ -79,6 +79,9 @@ function UploadReports($reportServerName = $(throw "reportServerName is required
     }
 }
 
+Write-Host "Create Datasource " $deployed.dataSourceName
 CreateReportDataSource $deployed.reportServername $deployed.dataSourceName $deployed.dataSourceParent $deployed.dataSourceServerInstance $deployed.dataBaseName
 
-UploadReports  $deployed.reportServername $deployed.folder $deployed.serverPath $deployed.dataSourceName $deployed.dataSourcePath
+Write-Host "Upload Reports from " $deployed.file " to " $deployed.reportServername
+UploadReports  $deployed.reportServername $deployed.file $deployed.serverPath $deployed.dataSourceName $deployed.dataSourcePath
+###############################################################################
