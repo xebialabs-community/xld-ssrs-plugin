@@ -35,6 +35,7 @@ See the **XL Deploy Reference Manual** for background information on XL Deploy a
 * **XL Deploy requirements**
 	* **XL Deploy**: version 5.x+
 	* requires the database plugin (see `XL_DEPLOY_SERVER_HOME/available-plugins`)
+	* **WinRM Native** *Overthere* connection
 
 # Installation
 
